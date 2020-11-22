@@ -1,0 +1,37 @@
+/*hecho tipo propiedades*/
+hombre(raymundo).
+hombre(rodrigo).
+hombre(alexis).
+hombre(agapo).
+mujer(dorotea).
+mujer(francisca).
+mujer(rossy).
+mujer(rogelia).
+mujer(nayeli).
+mujer(mariana).
+/*hecho tipo relaciones*/
+progenitor(raymundo,rodrigo).
+progenitor(agapo,raymundo).
+progenitora(dorotea,francisca).
+progenitora(francisca,mariana).
+abuelo(agapo,rodrigo).
+hijo(rodrigo,raymundo).
+hija(mariana,francisca).
+nieto(mariana,agapo).
+hermano(raymundo,francisca).
+hermana(francisca,raymundo).
+tio(raymundo,mariana).
+tia(francisca,rodrigo).
+sobrina(maria,raymundo).
+hermando(alexis,raymundo).
+progenitorde(A,B):-hijo(B,A).
+progenitorade(A,B):-hija(B,A).
+hijode(X,Y):-progenitor(Y,X).
+abuelode(X,Y):-nieto(Y,X).
+tiode(X,Y):-sobrina(Y,X).
+nietode(X,Y):-abuelo(Y,X).
+sobrinade(X,Y):-tio(Y,X).
+sobrinode(X,Y):-tia(Y,X).
+hermanode(X,Y):-hermano(Y,X).
+hermanade(X,Y):-hermana(Y,X).
+hermandode(X,Y):-hermando(Y,X).
